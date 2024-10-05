@@ -1,48 +1,88 @@
-<div id="contenedor" class="container">
-    <header>
-        <h3>Agenda de contactos 
-            <small> LocalStorage</small>
-        </h3>
-        <hr>
-    </header>
+<!doctype html>
+<html lang="es-ES">
 
-    <form class="form-inline">
+<head>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <title>Formulario de Cita</title>
+    <!-- Enlace al archivo JavaScript -->
+    <script src="formulario.js" defer></script>
+</head>
 
-        <div class="input-group">
-            <span class="input-group-addon" id="basic-addon1">@</span>
-            <input type="text" class="form-control" placeholder="Nombre" id="nombre" aria-describedby="basic-addon1">
+<body>
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-header text-center">
+                        Formulario de Cita
+                    </div>
+                    <div class="card-body shadow">
+                        <!-- Formulario para Cliente -->
+                        <form id="formCitas">
+                            <div class="form-group">
+                                <label for="nombreCliente">Nombre del Cliente</label>
+                                <input type="text" class="form-control" id="nombreCliente" placeholder="Nombre completo" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="telefonoCliente">Teléfono del Cliente</label>
+                                <input type="tel" class="form-control" id="telefonoCliente" placeholder="Teléfono" required>
+                            </div>
+                            
+                            <!-- Formulario para Servicio -->
+                            <div class="form-group">
+                                <label for="descripcionServicio">Descripción del Servicio</label>
+                                <textarea class="form-control" id="descripcionServicio" rows="3" placeholder="Describe el servicio" required></textarea>
+                            </div>
+                            <div class="form-group">
+                                <label for="costoServicio">Costo del Servicio</label>
+                                <input type="number" class="form-control" id="costoServicio" placeholder="Costo en MXN" required>
+                            </div>
+                            
+                            <!-- Formulario para Cita -->
+                            <div class="form-group">
+                                <label for="fechaCita">Fecha de la Cita</label>
+                                <input type="date" class="form-control" id="fechaCita" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="horaCita">Hora de la Cita</label>
+                                <input type="time" class="form-control" id="horaCita" required>
+                            </div>
+                            
+                            <!-- Botón de Enviar -->
+                            <button type="submit" class="btn btn-success btn-block">Programar Cita</button>
+                        </form>
+                    </div>
+                </div>
+
+                <!-- Tabla para mostrar las citas registradas -->
+                <div class="mt-4">
+                    <h3>Citas Registradas</h3>
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+                                <th>Cliente</th>
+                                <th>Teléfono</th>
+                                <th>Servicio</th>
+                                <th>Costo</th>
+                                <th>Fecha</th>
+                                <th>Hora</th>
+                            </tr>
+                        </thead>
+                        <tbody id="tablaCitas">
+                            <!-- Aquí se insertarán dinámicamente las citas -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
         </div>
-
-        <div class="input-group">
-            <span class="input-group-addon" id="basic-addon1">0034 - </span>
-            <input type="text" class="form-control" placeholder="Movil" id="movil" aria-describedby="basic-addon1">
-        </div>
-        <div class="input-group">
-            <input type="email" class="form-control" placeholder="Email" id="email" aria-describedby="basic-addon1">
-        </div>
-
-    </form>
-    <hr/>
-
-    <div id="gbotones" class="btn-group" role="group" aria-label="...">
-        <button type="button" onclick="guardarDato()" class="btn btn-info">
-            <span class="glyphicon glyphicon-floppy-save" aria-hidden="true"></span> Guardar
-        </button>
-        <button type="button" onclick="recuperarDato()" class="btn btn-success">
-            <span class="glyphicon glyphicon-floppy-open" aria-hidden="true"></span> Recuperar
-        </button>
-        <button type="button" onclick="eliminarDato()" class="btn btn-danger">
-            <span class="glyphicon glyphicon-remove" aria-hidden="true"></span> Eliminar
-        </button>
-
     </div>
 
-    <button type="button" onclick="eliminarTodo()" class="btn btn-danger">
-        <span class="glyphicon glyphicon-remove" aria-hidden="true"></span> Eliminar Todos
-    </button>
-    <hr>
+    <!-- Bootstrap JS y dependencias (opcional) -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9VBO+Zm5Z3iF5rOO6KpG1MGKXKpDqB6f2xvC" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</body>
 
-    <div id="contactos">
-    </div>
+</html>
 
-    </div>
