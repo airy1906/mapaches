@@ -1,0 +1,48 @@
+<div id="contenedor" class="container">
+    <header>
+        <h3>Agenda de contactos 
+            <small> LocalStorage</small>
+        </h3>
+        <hr>
+    </header>
+
+    <form class="form-inline">
+
+        <div class="input-group">
+            <span class="input-group-addon" id="basic-addon1">@</span>
+            <input type="text" class="form-control" placeholder="Nombre" id="nombre" aria-describedby="basic-addon1">
+        </div>
+
+        <div class="input-group">
+            <span class="input-group-addon" id="basic-addon1">0034 - </span>
+            <input type="text" class="form-control" placeholder="Movil" id="movil" aria-describedby="basic-addon1">
+        </div>
+        <div class="input-group">
+            <input type="email" class="form-control" placeholder="Email" id="email" aria-describedby="basic-addon1">
+        </div>
+
+    </form>
+    <hr/>
+
+    <div id="gbotones" class="btn-group" role="group" aria-label="...">
+        <button type="button" onclick="guardarDato()" class="btn btn-info">
+            <span class="glyphicon glyphicon-floppy-save" aria-hidden="true"></span> Guardar
+        </button>
+        <button type="button" onclick="recuperarDato()" class="btn btn-success">
+            <span class="glyphicon glyphicon-floppy-open" aria-hidden="true"></span> Recuperar
+        </button>
+        <button type="button" onclick="eliminarDato()" class="btn btn-danger">
+            <span class="glyphicon glyphicon-remove" aria-hidden="true"></span> Eliminar
+        </button>
+
+    </div>
+
+    <button type="button" onclick="eliminarTodo()" class="btn btn-danger">
+        <span class="glyphicon glyphicon-remove" aria-hidden="true"></span> Eliminar Todos
+    </button>
+    <hr>
+
+    <div id="contactos">
+    </div>
+
+    </div>
